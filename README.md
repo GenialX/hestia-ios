@@ -1,5 +1,5 @@
 # Hestia
 
-Hestia 赫斯提亚（希腊语：Εστία，译为“炉”或“炉边”）是希腊神话中的女灶神，掌万民的家庭事务。
+赫斯提亚（古希腊语：Εστία、拉丁语：Hestia）又译希式铁，是希腊神话中的炉灶女神、家宅的保护者，掌万民的家庭事务。
 
-Application for iOS.
+The application based on iOS is used for controlling the home remotely.
