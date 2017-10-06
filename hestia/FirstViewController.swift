@@ -3,7 +3,7 @@
 //  smart home
 //
 //  Created by GenialX on 05/10/2017.
-//  Copyright © 2017 xu. All rights reserved.
+//  Copyright © 2017 ihuxu.com. All rights reserved.
 //
 
 import UIKit
@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // Socket Client
-        let _ = Stream.getStreamsToHost(withName: "localhost", port: 1720, inputStream: &iStream, outputStream: &oStream)
+        let _ = Stream.getStreamsToHost(withName: "s.ihuxu.com", port: 1722, inputStream: &iStream, outputStream: &oStream)
         iStream?.open()
         oStream?.open()
         
@@ -35,11 +35,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations[0]
-        /**
         send("lon:\n\r和")
         print(currentLocation?.coordinate.longitude)
         print(currentLocation?.coordinate.latitude)
-        **/
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

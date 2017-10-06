@@ -3,7 +3,7 @@
 //  hestia
 //
 //  Created by GenialX on 05/10/2017.
-//  Copyright © 2017 xu. All rights reserved.
+//  Copyright © 2017 ihuxu.com. All rights reserved.
 //
 
 import UIKit
