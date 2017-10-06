@@ -35,9 +35,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations[0]
-        send("lon:\n\r和")
-        print(currentLocation?.coordinate.longitude)
-        print(currentLocation?.coordinate.latitude)
+        let nsdic: NSDictionary = ["errno" : 0, "errmsg" : "successfully", "data" : ["data_type" : 1, "lat" : currentLocation?.coordinate.latitude, "lon" : currentLocation?.coordinate.longitude]]
+        let jsonUtil = JsonUtil();
+        let jsonString = jsonUtil.nsdictionary2JsonString(nsdic)
+        sendLine(jsonString as String)
+        print(jsonString)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -49,6 +51,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         let data = string.data(using: .utf8)!
         data.copyBytes(to: &buf, count: data.count)
         oStream?.write(&buf, maxLength: data.count)
+    }
+    
+    func sendLine(_ string: String) {
+        send(string + "\n")
     }
     
     override func didReceiveMemoryWarning() {

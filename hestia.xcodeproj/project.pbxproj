@@ -15,6 +15,7 @@
 		658888A91F8607AB009CB79E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658888A71F8607AB009CB79E /* LaunchScreen.storyboard */; };
 		658888B41F8607AC009CB79E /* hestiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658888B31F8607AC009CB79E /* hestiaTests.swift */; };
 		658888BF1F8607AC009CB79E /* hestiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658888BE1F8607AC009CB79E /* hestiaUITests.swift */; };
+		65C9AFDE1F8749EC004BAB2B /* JsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9AFDD1F8749EC004BAB2B /* JsonUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		658888BA1F8607AC009CB79E /* hestiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hestiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		658888BE1F8607AC009CB79E /* hestiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hestiaUITests.swift; sourceTree = "<group>"; };
 		658888C01F8607AC009CB79E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C9AFDD1F8749EC004BAB2B /* JsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,8 @@
 		6588889B1F8607AB009CB79E /* hestia */ = {
 			isa = PBXGroup;
 			children = (
+				65C9AFDC1F8749D9004BAB2B /* Library */,
+				65C9AFDB1F87496F004BAB2B /* Model */,
 				6588889C1F8607AB009CB79E /* AppDelegate.swift */,
 				6588889E1F8607AB009CB79E /* FirstViewController.swift */,
 				658888A01F8607AB009CB79E /* SecondViewController.swift */,
@@ -126,6 +130,21 @@
 				658888C01F8607AC009CB79E /* Info.plist */,
 			);
 			path = hestiaUITests;
+			sourceTree = "<group>";
+		};
+		65C9AFDB1F87496F004BAB2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		65C9AFDC1F8749D9004BAB2B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				65C9AFDD1F8749EC004BAB2B /* JsonUtil.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				658888A11F8607AB009CB79E /* SecondViewController.swift in Sources */,
+				65C9AFDE1F8749EC004BAB2B /* JsonUtil.swift in Sources */,
 				6588889D1F8607AB009CB79E /* AppDelegate.swift in Sources */,
 				6588889F1F8607AB009CB79E /* FirstViewController.swift in Sources */,
 			);
