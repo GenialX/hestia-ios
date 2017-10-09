@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // Socket Client
-        let _ = Stream.getStreamsToHost(withName: "s.ihuxu.com", port: 1722, inputStream: &iStream, outputStream: &oStream)
+        let _ = Stream.getStreamsToHost(withName: "172.24.32.11", port: 1722, inputStream: &iStream, outputStream: &oStream)
         iStream?.open()
         oStream?.open()
         
