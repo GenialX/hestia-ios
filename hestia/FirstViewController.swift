@@ -35,7 +35,16 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations[0]
-        let nsdic: NSDictionary = ["errno" : 0, "errmsg" : "successfully", "data" : ["data_type" : 1, "lat" : currentLocation?.coordinate.latitude, "lon" : currentLocation?.coordinate.longitude]]
+        let nsdic: NSDictionary = [
+            "errno" : 0,
+            "errmsg" : "successfully",
+            "data" : [
+                "message_type" : 1000,
+                "lat" : currentLocation?.coordinate.latitude,
+                "lon" : currentLocation?.coordinate.longitude,
+                "token" : "aaabbbccc"
+            ]
+        ]
         let jsonUtil = JsonUtil();
         let jsonString = jsonUtil.nsdictionary2JsonString(nsdic)
         sendLine(jsonString as String)

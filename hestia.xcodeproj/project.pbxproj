@@ -101,6 +101,7 @@
 		6588889B1F8607AB009CB79E /* hestia */ = {
 			isa = PBXGroup;
 			children = (
+				65BBABBE1F8B4C5A000B7AEB /* Config */,
 				65C9AFDC1F8749D9004BAB2B /* Library */,
 				65C9AFDB1F87496F004BAB2B /* Model */,
 				6588889C1F8607AB009CB79E /* AppDelegate.swift */,
@@ -130,6 +131,13 @@
 				658888C01F8607AC009CB79E /* Info.plist */,
 			);
 			path = hestiaUITests;
+			sourceTree = "<group>";
+		};
+		65BBABBE1F8B4C5A000B7AEB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		65C9AFDB1F87496F004BAB2B /* Model */ = {
