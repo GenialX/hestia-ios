@@ -41,7 +41,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             "data" : [
                 "message_type" : 1000,
                 "lat" : currentLocation?.coordinate.latitude,
-                "lon" : currentLocation?.coordinate.longitude,
+                "lnt" : currentLocation?.coordinate.longitude,
                 "token" : "aaabbbccc"
             ]
         ]
