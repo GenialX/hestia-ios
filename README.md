@@ -7,3 +7,7 @@ So, Hestia is the project which controlls the devices in home smartly. Additiona
 ## Hesita iOS
 
 The application based on iOS is used for controlling the home remotely.
+
+## Server
+
+[Hestia Server](https://github.com/GenialX/hestia-server)
