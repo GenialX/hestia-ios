@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // Socket Client
-        let _ = Stream.getStreamsToHost(withName: "172.24.32.11", port: 1722, inputStream: &iStream, outputStream: &oStream)
+        let _ = Stream.getStreamsToHost(withName: "s.ihuxu.com", port: 1724, inputStream: &iStream, outputStream: &oStream)
         iStream?.open()
         oStream?.open()
         
@@ -31,6 +31,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         locationManager?.startUpdatingLocation()
         locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager?.requestAlwaysAuthorization()
+        locationManager?.allowsBackgroundLocationUpdates = true
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
