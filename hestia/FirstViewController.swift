@@ -10,9 +10,9 @@ import UIKit
 
 import CoreLocation
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
-    var locationManager:CLLocationManager?
-    var currentLocation:CLLocation?
+class FirstViewController: UIViewController, AMapLocationManagerDelegate {
+    var locationManager:AMapLocationManager?
+    //var currentLocation:CLLocation?
     
     var iStream: InputStream?
     var oStream: OutputStream?
@@ -26,34 +26,53 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         oStream?.open()
         
         // Location
+        /**
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.startUpdatingLocation()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         locationManager?.requestAlwaysAuthorization()
         locationManager?.allowsBackgroundLocationUpdates = true
+        **/
+        AMapServices.shared().apiKey = "4597c0ec9b703297f7cfb62c28ccde7b"
+        locationManager = AMapLocationManager()
+        
+        locationManager?.delegate = self
+        locationManager?.distanceFilter = 20
+        
+        //iOS 9（包含iOS 9）之后新特性：将允许出现这种场景，同一app中多个locationmanager：一些只能在前台定位，另一些可在后台定位，并可随时禁止其后台定位。
+        if UIDevice.current.systemVersion._bridgeToObjectiveC().doubleValue >= 9.0 {
+            locationManager?.pausesLocationUpdatesAutomatically = true
+        }
+        
+        locationManager?.locatingWithReGeocode = true
+        
+        //开始持续定位
+        locationManager?.startUpdatingLocation()
+        
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentLocation = locations[0]
+    func amapLocationManager(_ manager: AMapLocationManager!, didUpdate location: CLLocation!, reGeocode: AMapLocationReGeocode?) {
+        NSLog("location:{lat:\(location.coordinate.latitude); lon:\(location.coordinate.longitude); accuracy:\(location.horizontalAccuracy);};");
+        
+        if let reGeocode = reGeocode {
+            NSLog("reGeocode:%@", reGeocode)
+        }
+        
         let nsdic: NSDictionary = [
             "errno" : 0,
             "errmsg" : "successfully",
             "data" : [
                 "message_type" : 1000,
-                "lat" : currentLocation?.coordinate.latitude,
-                "lnt" : currentLocation?.coordinate.longitude,
+                "lat" : location.coordinate.latitude,
+                "lnt" : location.coordinate.longitude,
                 "token" : "aaabbbccc"
             ]
         ]
         let jsonUtil = JsonUtil();
         let jsonString = jsonUtil.nsdictionary2JsonString(nsdic)
         sendLine(jsonString as String)
-        print(jsonString)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        NSLog("json sent:%@", jsonString)
     }
  
     func send(_ string: String) {

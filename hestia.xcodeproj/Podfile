@@ -1,0 +1,1 @@
+target "/Users/GenialX/Documents/Workspace/Private/iOS/hestia/hestia.xcodeproj" do pod 'AMapLocation' end
