@@ -14,7 +14,7 @@ class JsonUtil {
             print("invalid json object")
             return ""
         }
-        let data: NSData! = try? JSONSerialization.data(withJSONObject: nsdictionary, options: []) as NSData!
+        let data: NSData! = try? JSONSerialization.data(withJSONObject: nsdictionary, options: []) as NSData
         return NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue)!
     }
 }

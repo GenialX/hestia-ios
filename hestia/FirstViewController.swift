@@ -12,7 +12,6 @@ import CoreLocation
 
 class FirstViewController: UIViewController, AMapLocationManagerDelegate {
     var locationManager:AMapLocationManager?
-    //var currentLocation:CLLocation?
     
     var iStream: InputStream?
     var oStream: OutputStream?
@@ -20,20 +19,7 @@ class FirstViewController: UIViewController, AMapLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Socket Client
-        let _ = Stream.getStreamsToHost(withName: "s.ihuxu.com", port: 1724, inputStream: &iStream, outputStream: &oStream)
-        iStream?.open()
-        oStream?.open()
-        
         // Location
-        /**
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.startUpdatingLocation()
-        locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-        locationManager?.requestAlwaysAuthorization()
-        locationManager?.allowsBackgroundLocationUpdates = true
-        **/
         AMapServices.shared().apiKey = "4597c0ec9b703297f7cfb62c28ccde7b"
         locationManager = AMapLocationManager()
         
@@ -49,7 +35,6 @@ class FirstViewController: UIViewController, AMapLocationManagerDelegate {
         
         //开始持续定位
         locationManager?.startUpdatingLocation()
-        
     }
     
     func amapLocationManager(_ manager: AMapLocationManager!, didUpdate location: CLLocation!, reGeocode: AMapLocationReGeocode?) {
@@ -71,19 +56,8 @@ class FirstViewController: UIViewController, AMapLocationManagerDelegate {
         ]
         let jsonUtil = JsonUtil();
         let jsonString = jsonUtil.nsdictionary2JsonString(nsdic)
-        sendLine(jsonString as String)
+        Server.ServerInstance.sendLine(jsonString as String)
         NSLog("json sent:%@", jsonString)
-    }
- 
-    func send(_ string: String) {
-        var buf = Array(repeating: UInt8(0), count: 1024)
-        let data = string.data(using: .utf8)!
-        data.copyBytes(to: &buf, count: data.count)
-        oStream?.write(&buf, maxLength: data.count)
-    }
-    
-    func sendLine(_ string: String) {
-        send(string + "\n")
     }
     
     override func didReceiveMemoryWarning() {
