@@ -13,6 +13,7 @@ class Server {
     
     private var iStream: InputStream?
     private var oStream: OutputStream?
+    private let serverConf: NSDictionary!
     
     var isAlive: Bool {
         get {
@@ -24,7 +25,9 @@ class Server {
     }
     
     private init() {
-        Stream.getStreamsToHost(withName: "s.ihuxu.com", port: 1724, inputStream: &iStream, outputStream: &oStream)
+        let path: String = Bundle.main.path(forResource: "common", ofType: "plist")!
+        serverConf = (NSDictionary(contentsOfFile: path)!.object(forKey: "Server") as! NSDictionary)
+        Stream.getStreamsToHost(withName: serverConf.object(forKey: "Host") as! String, port: serverConf.object(forKey: "Port") as! Int, inputStream: &iStream, outputStream: &oStream)
         iStream?.open()
         oStream?.open()
     }
