@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0FFCC47CCCC10955BEC6D1E4 /* libPods-hestia.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 041F19ABD1867C93B51F1650 /* libPods-hestia.a */; };
 		65054E92216DC6C400E43E02 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65054E91216DC6C400E43E02 /* Server.swift */; };
-		65054E94216DDDB000E43E02 /* common.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65054E93216DDDB000E43E02 /* common.plist */; };
+		65054E9C216EFAC600E43E02 /* Config in Resources */ = {isa = PBXBuildFile; fileRef = 65054E9B216EFAC600E43E02 /* Config */; };
 		6588889D1F8607AB009CB79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588889C1F8607AB009CB79E /* AppDelegate.swift */; };
 		6588889F1F8607AB009CB79E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6588889E1F8607AB009CB79E /* FirstViewController.swift */; };
 		658888A11F8607AB009CB79E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658888A01F8607AB009CB79E /* SecondViewController.swift */; };
@@ -42,7 +42,7 @@
 		041F19ABD1867C93B51F1650 /* libPods-hestia.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hestia.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C95640DB42D2BED31DFE9DF /* Pods-hestia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hestia.release.xcconfig"; path = "Pods/Target Support Files/Pods-hestia/Pods-hestia.release.xcconfig"; sourceTree = "<group>"; };
 		65054E91216DC6C400E43E02 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		65054E93216DDDB000E43E02 /* common.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = common.plist; sourceTree = "<group>"; };
+		65054E9B216EFAC600E43E02 /* Config */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Config; sourceTree = "<group>"; };
 		658888991F8607AB009CB79E /* hestia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hestia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6588889C1F8607AB009CB79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6588889E1F8607AB009CB79E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -122,9 +122,8 @@
 		6588889B1F8607AB009CB79E /* hestia */ = {
 			isa = PBXGroup;
 			children = (
-				65054E93216DDDB000E43E02 /* common.plist */,
+				65054E9B216EFAC600E43E02 /* Config */,
 				658AA62A216B579000EC0E5E /* HestiaBridge.h */,
-				65BBABBE1F8B4C5A000B7AEB /* Config */,
 				65C9AFDC1F8749D9004BAB2B /* Library */,
 				6588889C1F8607AB009CB79E /* AppDelegate.swift */,
 				6588889E1F8607AB009CB79E /* FirstViewController.swift */,
@@ -153,13 +152,6 @@
 				658888C01F8607AC009CB79E /* Info.plist */,
 			);
 			path = hestiaUITests;
-			sourceTree = "<group>";
-		};
-		65BBABBE1F8B4C5A000B7AEB /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
 			sourceTree = "<group>";
 		};
 		65C9AFDC1F8749D9004BAB2B /* Library */ = {
@@ -295,10 +287,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65054E9C216EFAC600E43E02 /* Config in Resources */,
 				658888A91F8607AB009CB79E /* LaunchScreen.storyboard in Resources */,
 				658888A61F8607AB009CB79E /* Assets.xcassets in Resources */,
 				658888A41F8607AB009CB79E /* Main.storyboard in Resources */,
-				65054E94216DDDB000E43E02 /* common.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ class Server {
     }
     
     private init() {
-        let path: String = Bundle.main.path(forResource: "common", ofType: "plist")!
+        let path: String = Bundle.main.path(forResource: "Common", ofType: "plist", inDirectory: "Config")!
         serverConf = (NSDictionary(contentsOfFile: path)!.object(forKey: "Server") as! NSDictionary)
         Stream.getStreamsToHost(withName: serverConf.object(forKey: "Host") as! String, port: serverConf.object(forKey: "Port") as! Int, inputStream: &iStream, outputStream: &oStream)
         iStream?.open()

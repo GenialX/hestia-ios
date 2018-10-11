@@ -5,9 +5,9 @@
 	<key>Server</key>
 	<dict>
 		<key>Host</key>
-		<string>your.host.name</string>
+		<string>s.ihuxu.com</string>
 		<key>Port</key>
-		<real>xxxx</real>
+		<real>1724</real>
 	</dict>
 </dict>
 </plist>
